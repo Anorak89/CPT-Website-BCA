@@ -15,7 +15,7 @@ import { Providers } from "./providers";
 export const metadata: Metadata = {
   title: {
     template: "%s | BCA CPT",
-    default: "BCA Comptetetive Programming Team",
+    default: "BCA Competitive Programming Team",
   },
   description:
     "Bergen County Academies Comeptetive Programming Team",
