@@ -13,7 +13,7 @@ export const NAV_DATA = [
       
       {
         title: "About Us",
-        url: "/profile",
+        url: "/about-us",
         icon: Icons.User,
         items: [],
       },
