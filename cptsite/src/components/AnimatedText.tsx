@@ -8,9 +8,10 @@ export default function AnimatedText() {
   useEffect(() => {
     const options = {
       strings: [
-        'CPT is amazing',
-        'CPT is extraordinary',
-        'CPT is innovative',
+        'BCA Competitive Programming Team',
+        'Code. Compete. Collaborate.',
+        'USACO • ACSL • Codeforces',
+        'Beginner to Advanced – All Welcome',
       ],
       typeSpeed: 100,
       backSpeed: 50,

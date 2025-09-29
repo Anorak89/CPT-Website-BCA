@@ -2,8 +2,7 @@
 import "@/css/satoshi.css";
 import "@/css/style.css";
 
-import Script from 'next/script';
-import { Sidebar } from "@/components/Layouts/sidebar";
+// Removed sidebar for cleaner design
 
 import "flatpickr/dist/flatpickr.min.css";
 import "jsvectormap/dist/jsvectormap.css";
@@ -13,10 +12,7 @@ import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import type { PropsWithChildren } from "react";
 import { Providers } from "./providers";
-import Particles from "react-particles";
 import "react"
-import { loadFull } from "tsparticles";
-import { useCallback } from "react";
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -70,27 +66,14 @@ export default function RootLayout({ children }: PropsWithChildren) {
     
     <html lang="en" suppressHydrationWarning>
       <body>
-        <Script
-          strategy="beforeInteractive"
-          src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
-        />
-        <Script
-          strategy="beforeInteractive"
-          src="https://unpkg.com/vanta@latest/dist/vanta.birds.min.js"
-        />
         <Providers>
           <NextTopLoader showSpinner={false} />
 
-          <div className="flex min-h-screen">
-            <Sidebar />
-
-            <div className="w-full bg-gray-2 dark:bg-[#020d1a]">
-              <Header />
-
-              <main className="isolate mx-auto w-full max-w-screen-2xl overflow-hidden p-4 md:p-6 2xl:p-10">
-                {children}
-              </main>
-            </div>
+          <div className="min-h-screen bg-[#0b1228]">
+            <Header />
+            <main className="mx-auto w-full max-w-screen-2xl overflow-hidden p-4 md:p-6 2xl:p-10">
+              {children}
+            </main>
           </div>
         </Providers>
       </body>

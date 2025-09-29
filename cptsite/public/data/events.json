@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Weekly Meeting",
+    "date": "2025-10-07T15:30:00-04:00",
+    "location": "Room 3XX",
+    "zoom": "https://zoom.us/j/0000000000",
+    "description": "Kickoff + practice problems"
+  },
+  {
+    "title": "USACO Practice",
+    "date": "2025-10-14T15:30:00-04:00",
+    "location": "Room 3XX",
+    "zoom": "https://zoom.us/j/0000000000",
+    "description": "Greedy & sorting practice"
+  }
+]
+

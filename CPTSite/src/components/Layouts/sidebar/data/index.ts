@@ -13,7 +13,7 @@ export const NAV_DATA = [
       
       {
         title: "About Us",
-        url: "/about-us",
+        url: "/about",
         icon: Icons.User,
         items: [],
       },
@@ -27,6 +27,18 @@ export const NAV_DATA = [
         title: "Previous Lessons",
         url: "/lessons",
         icon: Icons.User,
+        items: [],
+      },
+      {
+        title: "Competitions",
+        url: "/competitions",
+        icon: Icons.PieChart,
+        items: [],
+      },
+      {
+        title: "Resources",
+        url: "/resources",
+        icon: Icons.FourCircle,
         items: [],
       },
       {

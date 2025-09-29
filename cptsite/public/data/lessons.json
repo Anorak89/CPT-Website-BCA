@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Intro to CP & USACO",
+    "summary": "Getting started, platforms, problem types.",
+    "slidesUrl": "#",
+    "recordingUrl": "#"
+  },
+  {
+    "title": "Greedy & Sorting",
+    "summary": "Patterns and common pitfalls.",
+    "slidesUrl": "#",
+    "recordingUrl": "#"
+  },
+  {
+    "title": "Graphs 1: BFS/DFS",
+    "summary": "Traversal and basic applications.",
+    "slidesUrl": "#",
+    "recordingUrl": "#"
+  }
+]
+

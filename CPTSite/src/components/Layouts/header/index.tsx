@@ -3,60 +3,52 @@
 import { SearchIcon } from "@/assets/icons";
 import Image from "next/image";
 import Link from "next/link";
-import { useSidebarContext } from "../sidebar/sidebar-context";
-import { MenuIcon } from "./icons";
 import { Notification } from "./notification";
-import { ThemeToggleSwitch } from "./theme-toggle";
 import { UserInfo } from "./user-info";
 
 export function Header() {
-  const { toggleSidebar, isMobile } = useSidebarContext();
 
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-stroke bg-white px-4 py-5 shadow-1 dark:border-stroke-dark dark:bg-gray-dark md:px-5 2xl:px-10">
-      <button
-        onClick={toggleSidebar}
-        className="rounded-lg border px-1.5 py-1 dark:border-stroke-dark dark:bg-[#020D1A] hover:dark:bg-[#FFFFFF1A] lg:hidden"
-      >
-        <MenuIcon />
-        <span className="sr-only">Toggle Sidebar</span>
-      </button>
+    <header className="sticky top-0 z-30 flex items-center justify-between border-b border-[#0f1a3a] bg-[#0b1228] px-4 py-4 shadow-lg md:px-6 2xl:px-10">
+      {/* Logo and Title */}
+      <Link href="/" className="flex items-center gap-3">
+        <Image
+          src={"/images/logo/logo-icon.svg"}
+          width={40}
+          height={40}
+          alt="BCA CPT"
+          className="rounded-lg"
+        />
+        <div className="hidden md:block">
+          <h1 className="text-lg font-bold text-white">BCA CPT</h1>
+          <p className="text-xs text-blue-300">Competitive Programming Team</p>
+        </div>
+      </Link>
 
-      {isMobile && (
-        <Link href={"/"} className="ml-2 max-[430px]:hidden min-[375px]:ml-4">
-          <Image
-            src={"/images/logo/logo-icon.svg"}
-            width={32}
-            height={32}
-            alt=""
-            role="presentation"
-          />
-        </Link>
-      )}
+      {/* Navigation */}
+      <nav className="hidden md:flex items-center gap-8">
+        <Link href="/about" className="text-white/80 hover:text-white transition-colors">About</Link>
+        <Link href="/calendar" className="text-white/80 hover:text-white transition-colors">Calendar</Link>
+        <Link href="/lessons" className="text-white/80 hover:text-white transition-colors">Lessons</Link>
+        <Link href="/competitions" className="text-white/80 hover:text-white transition-colors">Competitions</Link>
+        <Link href="/resources" className="text-white/80 hover:text-white transition-colors">Resources</Link>
+        <Link href="/news" className="text-white/80 hover:text-white transition-colors">News</Link>
+        <Link href="/contact" className="text-white/80 hover:text-white transition-colors">Contact</Link>
+      </nav>
 
-      <div className="max-xl:hidden">
-        <h1 className="mb-2 text-heading-5 font-bold text-dark dark:text-white">
-          Bergen County Academies Competitive Programming Team
-        </h1>
-        <p className="font-medium">Dashboard</p>
-      </div>
-
-      <div className="flex flex-1 items-center justify-end gap-2 min-[375px]:gap-4">
-        <div className="relative w-full max-w-[300px]">
+      {/* Right side actions */}
+      <div className="flex items-center gap-4">
+        <div className="hidden lg:block relative">
           <input
             type="search"
-            placeholder="Search"
-            className="flex w-full items-center gap-3.5 rounded-full border bg-gray-2 py-3 pl-[53px] pr-5 outline-none transition-colors focus-visible:border-primary dark:border-dark-3 dark:bg-dark-2 dark:hover:border-dark-4 dark:hover:bg-dark-3 dark:hover:text-dark-6 dark:focus-visible:border-primary"
+            placeholder="Search..."
+            className="w-64 rounded-full border border-[#1b2a5a] bg-[#0f1731] text-white placeholder:text-white/40 py-2 pl-10 pr-4 outline-none transition-colors focus:border-blue-500"
           />
-
-          <SearchIcon className="pointer-events-none absolute left-5 top-1/2 -translate-y-1/2 max-[1015px]:size-5" />
+          <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 size-4 text-white/40" />
         </div>
-
-        <ThemeToggleSwitch />
-
-
-        <div className="shrink-0">
-        </div>
+        
+        <Notification />
+        <UserInfo />
       </div>
     </header>
   );
