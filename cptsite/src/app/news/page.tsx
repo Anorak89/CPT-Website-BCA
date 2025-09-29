@@ -8,14 +8,14 @@ export default async function NewsPage() {
   return (
     <>
       <Breadcrumb pageName="News" />
-      <div className="rounded-[10px] bg-white p-6 shadow-1 dark:bg-gray-dark dark:shadow-card">
-        <h1 className="text-2xl font-bold text-dark dark:text-white">Important News</h1>
+      <div className="rounded-[10px] bg-[#0b1228] p-6 shadow-1 border border-[#0f1a3a]">
+        <h1 className="text-2xl font-bold text-white">Important News</h1>
         <div className="mt-6 space-y-4">
           {items.map((n) => (
-            <div key={n.title} className="rounded-lg border border-stroke p-4 dark:border-dark-3">
-              <h3 className="font-semibold text-dark dark:text-white">{n.title}</h3>
-              {n.date && <p className="text-xs text-dark-4 dark:text-dark-6">{n.date}</p>}
-              <p className="mt-1 text-dark-5 dark:text-dark-6">{n.body}</p>
+            <div key={n.title} className="rounded-lg border border-[#0f1a3a] p-4">
+              <h3 className="font-semibold text-white">{n.title}</h3>
+              {n.date && <p className="text-xs text-white/60">{n.date}</p>}
+              <p className="mt-1 text-white/70">{n.body}</p>
             </div>
           ))}
         </div>

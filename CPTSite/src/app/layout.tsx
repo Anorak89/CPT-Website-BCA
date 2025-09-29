@@ -2,12 +2,11 @@
 import "@/css/satoshi.css";
 import "@/css/style.css";
 
-// Removed sidebar for cleaner design
-
 import "flatpickr/dist/flatpickr.min.css";
 import "jsvectormap/dist/jsvectormap.css";
 
 import { Header } from "@/components/Layouts/header";
+import { Sidebar, SidebarProvider } from "@/components/Layouts/sidebar";
 import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import type { PropsWithChildren } from "react";
@@ -15,8 +14,6 @@ import { Providers } from "./providers";
 import "react"
 
 import { useState } from 'react';
-import Link from 'next/link';
-import { Menu } from 'lucide-react';
 
 // export default function RootLayout({ children }: { children: React.ReactNode }) {
 //   const [open, setOpen] = useState(false);
@@ -63,18 +60,26 @@ import { Menu } from 'lucide-react';
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>
           <NextTopLoader showSpinner={false} />
-
-          <div className="min-h-screen bg-[#0b1228]">
-            <Header />
-            <main className="mx-auto w-full max-w-screen-2xl overflow-hidden p-4 md:p-6 2xl:p-10">
-              {children}
-            </main>
-          </div>
+          <SidebarProvider defaultOpen={false}>
+            <div className="min-h-screen bg-[#0b1228]">
+              <div className="flex">
+                {/* Sidebar */}
+                <Sidebar />
+                
+                {/* Main content area */}
+                <div className="flex-1">
+                  <Header />
+                  <main className="mx-auto w-full max-w-screen-2xl overflow-hidden p-4 md:p-6 2xl:p-10">
+                    {children}
+                  </main>
+                </div>
+              </div>
+            </div>
+          </SidebarProvider>
         </Providers>
       </body>
     </html>

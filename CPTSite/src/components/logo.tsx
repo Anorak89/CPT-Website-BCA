@@ -1,27 +1,13 @@
-import darkLogo from "@/assets/logos/dark.svg";
-import logo from "@/assets/logos/image.png";
-import Image from "next/image";
-
 export function Logo() {
   return (
-    <div className="relative h-8 max-w-[10.847rem]">
-      <Image
-        src={logo}
-        fill
-        className="cpt-logo"
-        alt="NextAdmin logo"
-        role="presentation"
-        quality={100}
-      />
-
-      <Image
-        src={logo}
-        fill
-        className="cpt-logo"
-        alt="NextAdmin logo"
-        role="presentation"
-        quality={100}
-      />
+    <div className="flex items-center gap-3">
+      <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center">
+        <span className="text-white font-bold text-sm">CPT</span>
+      </div>
+      <div className="hidden md:block">
+        <h1 className="text-lg font-bold text-white">BCA CPT</h1>
+        <p className="text-xs text-blue-300">Competitive Programming Team</p>
+      </div>
     </div>
   );
 }
