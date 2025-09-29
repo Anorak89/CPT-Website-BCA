@@ -1,4 +1,3 @@
-'use client'
 import "@/css/satoshi.css";
 import "@/css/style.css";
 
@@ -11,9 +10,6 @@ import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import type { PropsWithChildren } from "react";
 import { Providers } from "./providers";
-import "react"
-
-import { useState } from 'react';
 
 // export default function RootLayout({ children }: { children: React.ReactNode }) {
 //   const [open, setOpen] = useState(false);
@@ -49,14 +45,14 @@ import { useState } from 'react';
 // );
 // }
 
-// export const metadata: Metadata = {
-//   title: {
-//     template: "%s | BCA CPT",
-//     default: "BCA Competitive Programming Team",
-//   },
-//   description:
-//     "Bergen County Academies Comeptetive Programming Team",
-// };
+export const metadata: Metadata = {
+  title: {
+    template: "%s | BCA CPT",
+    default: "BCA Competitive Programming Team",
+  },
+  description:
+    "Bergen County Academies Competitive Programming Team",
+};
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (

@@ -36,41 +36,43 @@ export function Sidebar() {
       {/* Mobile Overlay */}
       {isMobile && isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 transition-opacity duration-300"
+          className="fixed inset-0 z-40 bg-black/50 transition-opacity duration-500 ease-in-out"
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
       )}
 
+      {/* Sidebar slides in below the header, hamburger stays fixed */}
       <aside
         className={cn(
-          "max-w-[290px] overflow-hidden border-r border-[#0f1a3a] bg-[#0b1228] transition-[width] duration-200 ease-linear",
-          isMobile ? "fixed bottom-0 top-0 z-50" : "sticky top-0 h-screen",
-          isOpen ? "w-full" : "w-0",
+          "max-w-[290px] overflow-hidden border-r border-[#0f1a3a] bg-[#0b1228] transition-all duration-500 ease-in-out",
+          isMobile ? "fixed left-0 top-0 z-50 h-full" : "sticky top-0 h-screen",
+          isOpen ? "translate-x-0 w-full shadow-2xl" : "-translate-x-full w-0",
         )}
+        style={{ willChange: 'transform, width' }}
         aria-label="Main navigation"
         aria-hidden={!isOpen}
         inert={!isOpen}
       >
         <div className="flex h-full flex-col py-10 pl-[25px] pr-[7px]">
-          <div className="relative pr-4.5">
-            <Link
-              href={"/"}
-              onClick={() => isMobile && toggleSidebar()}
-              className="px-0 py-2.5 min-[850px]:py-0"
-            >
-            </Link>
-
+          {/* Hamburger stays above menu bar */}
+          <div className="relative pr-4.5 flex flex-col items-start">
             {isMobile && (
               <button
                 onClick={toggleSidebar}
-                className="absolute left-3/4 right-4.5 top-1/2 -translate-y-1/2 text-right"
+                className="mb-4 z-50 flex items-center justify-center rounded p-2 text-white hover:text-blue-400 transition-colors bg-[#0b1228] shadow-lg"
+                style={{ position: 'absolute', top: 0, left: 0 }}
+                aria-label="Close navigation menu"
               >
-                <span className="sr-only">Close Menu</span>
-
-                <ArrowLeftIcon className="ml-auto size-7" />
+                <ArrowLeftIcon className="size-7" />
               </button>
             )}
+            <Link
+              href={"/"}
+              onClick={() => isMobile && toggleSidebar()}
+              className="px-0 py-2.5 min-[850px]:py-0 mt-10"
+            >
+            </Link>
           </div>
 
           {/* Navigation */}
