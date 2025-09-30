@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -35,6 +36,7 @@
     "vanta": "^0.5.24"
   },
   "devDependencies": {
+    "@types/estree": "^1.0.8",
     "@types/node": "^22",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",

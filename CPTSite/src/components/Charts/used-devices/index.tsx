@@ -1,4 +1,3 @@
-import { PeriodPicker } from "@/components/period-picker";
 import { cn } from "@/lib/utils";
 import { getDevicesUsedData } from "@/services/charts.services";
 import { DonutChart } from "./chart";
@@ -26,7 +25,7 @@ export async function UsedDevices({
           Used Devices
         </h2>
 
-        <PeriodPicker defaultValue={timeFrame} sectionKey="used_devices" />
+        <span className="text-sm text-gray-500">({timeFrame})</span>
       </div>
 
       <div className="grid place-items-center">
