@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
             <ul className="space-y-2 text-white/70">
-              <li>• Founded: 20XX</li>
+              <li>• Founded: 2018</li>
               <li>• Location: Bergen County Academies</li>
               <li>• Focus: USACO, ACSL, Codeforces, ICPC-style</li>
               <li>• Members from beginner to advanced</li>
