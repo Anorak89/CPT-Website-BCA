@@ -1,1 +1,3 @@
-/*    /index.html   200
+# Static redirects for Render
+# Only redirect root to index.html, let other paths resolve naturally
+/    /index.html   200

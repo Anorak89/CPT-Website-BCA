@@ -1,5 +1,6 @@
+"use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { loadPublicJson } from "@/lib/server/loadPublicJson";
+import { useEffect, useState } from "react";
 
 type Lesson = {
   title: string;
@@ -8,8 +9,37 @@ type Lesson = {
   recordingUrl?: string;
 };
 
-export default async function LessonsPage() {
-  const lessons = await loadPublicJson<Lesson[]>("lessons.json");
+export default function LessonsPage() {
+  const [lessons, setLessons] = useState<Lesson[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadLessons() {
+      try {
+        const response = await fetch('/data/lessons.json');
+        const data = await response.json();
+        setLessons(data);
+      } catch (error) {
+        console.error('Failed to load lessons:', error);
+        setLessons([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadLessons();
+  }, []);
+
+  if (loading) {
+    return (
+      <>
+        <Breadcrumb pageName="Lessons" />
+        <div className="rounded-[10px] bg-[#0b1228] p-6 shadow-1 border border-[#0f1a3a]">
+          <h1 className="text-2xl font-bold text-white">Previous Lessons</h1>
+          <p className="mt-3 text-white/70">Loading...</p>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <Breadcrumb pageName="Lessons" />
