@@ -1,5 +1,8 @@
 'use client';
-import AnimatedText from '../../components/AnimatedText';
+// import AnimatedText from '../../../components/AnimatedText';
+// If AnimatedText is located elsewhere, update the path below:
+import AnimatedText from '@/components/AnimatedText';
+// Or, if you do not have AnimatedText, temporarily remove its usage and the import.
 import Link from 'next/link';
 import { useEffect } from 'react';
 

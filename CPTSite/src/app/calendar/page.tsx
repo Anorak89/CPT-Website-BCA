@@ -1,5 +1,5 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import CalendarBox from "@/components/CalenderBox";
+import CalendarBox from "@/components/CalendarBox";
 import { loadPublicJson } from "@/lib/server/loadPublicJson";
 
 type EventItem = {
