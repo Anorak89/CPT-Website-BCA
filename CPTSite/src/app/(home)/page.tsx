@@ -1,27 +1,53 @@
 'use client';
-// import AnimatedText from '../../../components/AnimatedText';
-// If AnimatedText is loca2ted elsewhere, update the path below:
-import AnimatedText from '@/components/AnimatedText';
-// Or, if you do not have AnimatedText, temporarily remove its usage and the import.
+import React, { useEffect, useRef } from 'react';
+import Typed from 'typed.js';
 import Link from 'next/link';
-import { useEffect } from 'react';
+
+function AnimatedText() {
+  const typedRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const options = {
+      strings: [
+        'BCA Competitive Programming Team',
+        'Code. Compete. Collaborate.',
+        'USACO • ACSL • Codeforces',
+        'Beginner to Advanced – All Welcome',
+      ],
+      typeSpeed: 100,
+      backSpeed: 50,
+      loop: true,
+    };
+
+    const typed = new Typed(typedRef.current!, options);
+    return () => typed.destroy();
+  }, []);
+
+  return (
+    <div className="inline-block text-center">
+      <span
+        ref={typedRef}
+        className="text-4xl md:text-6xl font-bold text-white blurry"
+      ></span>
+    </div>
+  );
+}
 
 export default function Home() {
   useEffect(() => {
     const elements = document.querySelectorAll('[data-reveal]');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('in');
       });
     }, { threshold: 0.15 });
     elements.forEach(el => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
   return (
     <div className="w-full">
-      {/* Hero with static gradient */}
+      {/* Hero Section */}
       <div className="relative h-[70vh] w-full bg-gradient-to-b from-[#030712] via-[#0a1022] to-[#0b1228]">
         <div className="flex flex-col items-center justify-center h-full text-center px-4">
           <AnimatedText />
@@ -29,17 +55,27 @@ export default function Home() {
             Bergen County Academies Competitive Programming Team
           </p>
           <div className="mt-8 flex items-center gap-4">
-            <a href="#join" className="rounded-lg bg-blue-600 px-5 py-2.5 font-semibold text-white hover:bg-blue-700 transition-colors">
+            <a
+              href="#join"
+              className="rounded-lg bg-blue-600 px-5 py-2.5 font-semibold text-white hover:bg-blue-700 transition-colors"
+            >
               Join CPT
             </a>
-            <Link href="/about" className="rounded-lg border border-white/30 px-5 py-2.5 font-semibold text-white hover:bg-white/10 transition-colors">
+            <Link
+              href="/about"
+              className="rounded-lg border border-white/30 px-5 py-2.5 font-semibold text-white hover:bg-white/10 transition-colors"
+            >
               Learn More
             </Link>
           </div>
-          <a href="#about" className="absolute bottom-6 text-white/70 hover:text-white">Scroll ↓</a>
+          <a
+            href="#about"
+            className="absolute bottom-6 text-white/70 hover:text-white"
+          >
+            Scroll ↓
+          </a>
         </div>
       </div>
-
       {/* Sections */}
       <section id="join" data-reveal className="reveal relative mx-auto max-w-screen-2xl px-4 py-16 md:py-24">
         <h2 className="text-3xl font-bold text-white">How to Join</h2>

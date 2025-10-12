@@ -1,7 +1,13 @@
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import CalendarBox from "@/components/CalendarBox";
-import { loadPublicJson } from "@/lib/server/loadPublicJson";
+import fs from "fs/promises";
+import path from "path";
 
+async function loadPublicJson<T = unknown>(relativePath: string): Promise<T> {
+  const filePath = path.join(process.cwd(), "public", "data", relativePath);
+  const raw = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(raw) as T;
+}
 type EventItem = {
   title: string;
   date: string; // ISO string
