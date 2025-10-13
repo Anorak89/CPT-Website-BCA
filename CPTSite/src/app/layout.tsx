@@ -7,8 +7,6 @@ import "jsvectormap/dist/jsvectormap.css";
 import { Header } from "@/components/Layouts/header";
 import { Sidebar, SidebarProvider } from "@/components/Layouts/sidebar";
 import GlobalDebugger from "@/components/GlobalDebugger";
-import type { Metadata } from "next";
-import NextTopLoader from "nextjs-toploader";
 import type { PropsWithChildren } from "react";
 import { Providers } from "./providers";
 
@@ -46,14 +44,8 @@ import { Providers } from "./providers";
 // );
 // }
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s | BCA CPT",
-    default: "BCA Competitive Programming Team",
-  },
-  description:
-    "Bergen County Academies Competitive Programming Team",
-};
+// This layout file is no longer used with Vite - keeping for reference
+// The main layout is now in App.tsx
 
 export default function RootLayout({ children }: PropsWithChildren) {
   console.log('🔍 [LAYOUT DEBUG] RootLayout rendering');
@@ -64,7 +56,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body>
         <Providers>
           <GlobalDebugger />
-          <NextTopLoader showSpinner={false} />
           <SidebarProvider defaultOpen={false}>
             <div className="min-h-screen bg-[#0b1228]">
               <div className="flex">

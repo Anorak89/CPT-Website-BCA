@@ -1,6 +1,6 @@
 "use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import Link from "next/link";
+// No imports needed for external links
 import { useEffect } from "react";
 
 export default function ContactPage() {
@@ -18,7 +18,7 @@ export default function ContactPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">Discord</h3>
-            <Link href="#" className="mt-1 inline-block text-blue-400 hover:underline">Join our server</Link>
+            <a href="#" className="mt-1 inline-block text-blue-400 hover:underline">Join our server</a>
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">Email</h3>
@@ -26,11 +26,11 @@ export default function ContactPage() {
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">Instagram</h3>
-            <Link href="#" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</Link>
+            <a href="#" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</a>
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">TikTok</h3>
-            <Link href="#" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</Link>
+            <a href="#" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</a>
           </div>
         </div>
       </div>

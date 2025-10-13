@@ -1,7 +1,7 @@
 'use client';
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Typed from 'typed.js';
-import Link from 'next/link';
+import { Link } from 'react-router-dom';
 
 function AnimatedText() {
   const typedRef = useRef<HTMLSpanElement>(null);
@@ -46,7 +46,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[#0b1228] min-h-screen">
       {/* Hero Section */}
       <div className="relative h-[70vh] w-full bg-gradient-to-b from-[#030712] via-[#0a1022] to-[#0b1228]">
         <div className="flex flex-col items-center justify-center h-full text-center px-4">
@@ -62,7 +62,7 @@ export default function Home() {
               Join CPT
             </a>
             <Link
-              href="/about"
+              to="/about"
               className="rounded-lg border border-white/30 px-5 py-2.5 font-semibold text-white hover:bg-white/10 transition-colors"
             >
               Learn More
@@ -83,9 +83,9 @@ export default function Home() {
           Come to our weekly meetings, introduce yourself on Discord, and sign up for upcoming competitions.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/resources" className="rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 transition-colors">Resources</Link>
-          <Link href="/calendar" className="rounded-md border border-white/20 px-4 py-2 font-medium text-white hover:bg-white/10 transition-colors">Calendar</Link>
-          <Link href="/contact" className="rounded-md border border-white/20 px-4 py-2 font-medium text-white hover:bg-white/10 transition-colors">Contact</Link>
+          <Link to="/resources" className="rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 transition-colors">Resources</Link>
+          <Link to="/calendar" className="rounded-md border border-white/20 px-4 py-2 font-medium text-white hover:bg-white/10 transition-colors">Calendar</Link>
+          <Link to="/contact" className="rounded-md border border-white/20 px-4 py-2 font-medium text-white hover:bg-white/10 transition-colors">Contact</Link>
         </div>
       </section>
 
@@ -97,7 +97,7 @@ export default function Home() {
               We are BCA's community for algorithmic problem solving: learning, practicing, and competing together.
             </p>
             <div className="mt-6">
-              <Link href="/about" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">Read more →</Link>
+              <Link to="/about" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">Read more →</Link>
             </div>
           </div>
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
@@ -117,7 +117,7 @@ export default function Home() {
           We regularly participate in USACO, ACSL, Codeforces rounds, and local contests.
         </p>
         <div className="mt-6">
-          <Link href="/competitions" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">Competition details →</Link>
+          <Link to="/competitions" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">Competition details →</Link>
         </div>
       </section>
 
@@ -127,7 +127,7 @@ export default function Home() {
           Browse slides, notes, and recordings from prior meetings to learn at your pace.
         </p>
         <div className="mt-6">
-          <Link href="/lessons" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">View lessons →</Link>
+          <Link to="/lessons" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">View lessons →</Link>
         </div>
       </section>
 
@@ -137,8 +137,8 @@ export default function Home() {
           Join our community and stay up to date.
         </p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/contact" className="rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 transition-colors">Contact Page</Link>
-          <Link href="/news" className="rounded-md border border-white/20 px-4 py-2 font-medium text-white hover:bg-white/10 transition-colors">News</Link>
+          <Link to="/contact" className="rounded-md bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-700 transition-colors">Contact Page</Link>
+          <Link to="/news" className="rounded-md border border-white/20 px-4 py-2 font-medium text-white hover:bg-white/10 transition-colors">News</Link>
         </div>
       </section>
 
@@ -148,7 +148,7 @@ export default function Home() {
           Announcements about meetings, contests, and achievements.
         </p>
         <div className="mt-6">
-          <Link href="/news" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">See all news →</Link>
+          <Link to="/news" className="font-semibold text-blue-400 hover:text-blue-300 transition-colors">See all news →</Link>
         </div>
       </section>
     </div>

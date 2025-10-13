@@ -1,30 +1,15 @@
-import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
-import { CampaignVisitors } from "@/components/Charts/campaign-visitors";
-import { UsedDevices } from "@/components/Charts/used-devices";
-import { Metadata } from "next";
+// This file is no longer used with Vite - the chart page is now in src/pages/charts/BasicChartPage.tsx
+// Keeping for reference only
 
-export const metadata: Metadata = {
-  title: "Basic Chart",
-};
+import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 
 export default function Page() {
-  // For static export, we'll use default values
-  const defaultTimeFrame = "30d";
-
   return (
     <>
       <Breadcrumb pageName="Basic Chart" />
-
-      <div className="grid grid-cols-12 gap-4 md:gap-6 2xl:gap-7.5">
-        <UsedDevices
-          key="used_devices"
-          timeFrame={defaultTimeFrame}
-          className="col-span-12 xl:col-span-5"
-        />
-
-        <div className="col-span-12 xl:col-span-5">
-          <CampaignVisitors />
-        </div>
+      <div className="rounded-[10px] bg-[#0b1228] p-6 shadow-1 border border-[#0f1a3a]">
+        <h1 className="text-2xl font-bold text-white">Charts</h1>
+        <p className="mt-3 text-white/70">Chart components will be displayed here.</p>
       </div>
     </>
   );

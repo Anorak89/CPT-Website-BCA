@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Header } from '@/components/Layouts/header'
 import { Sidebar, SidebarProvider } from '@/components/Layouts/sidebar'
@@ -26,7 +26,6 @@ import AlertsPage from './pages/ui-elements/AlertsPage'
 import ButtonsPage from './pages/ui-elements/ButtonsPage'
 
 function App() {
-  const location = useLocation()
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -37,8 +36,8 @@ function App() {
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-2 dark:bg-[#020d1a]">
-        <div className="text-xl text-gray-600 dark:text-gray-400">Loading...</div>
+      <div className="flex min-h-screen items-center justify-center bg-[#0b1228]">
+        <div className="text-xl text-white">Loading...</div>
       </div>
     )
   }
@@ -46,13 +45,13 @@ function App() {
   return (
     <Providers>
       <SidebarProvider>
-        <div className="flex min-h-screen bg-gray-2 dark:bg-[#020d1a]">
+        <div className="flex min-h-screen bg-[#0b1228]">
           <Sidebar />
           
           <div className="flex w-full flex-col">
             <Header />
             
-            <main className="flex-1 overflow-hidden p-4 md:p-6 2xl:p-10">
+            <main className="flex-1 overflow-hidden p-4 md:p-6 2xl:p-10 bg-[#0b1228]">
               <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/about" element={<AboutPage />} />

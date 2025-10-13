@@ -1,11 +1,9 @@
 "use client";
 
-import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { NAV_DATA } from "./data";
-import { ArrowLeftIcon, ChevronUp } from "./icons";
+import { ArrowLeftIcon } from "./icons";
 import { MenuItem } from "./menu-item";
 import { useSidebarContext, SidebarProvider } from "./sidebar-context";
 
@@ -15,21 +13,6 @@ export function Sidebar() {
   const location = useLocation();
   const pathname = location.pathname;
   const { setIsOpen, isOpen, isMobile, toggleSidebar } = useSidebarContext();
-  const [expandedItems, setExpandedItems] = useState<string[]>([]);
-
-  const toggleExpanded = (title: string) => {
-    setExpandedItems((prev) => (prev.includes(title) ? [] : [title]));
-
-    // Uncomment the following line to enable multiple expanded items
-    // setExpandedItems((prev) =>
-    //   prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title],
-    // );
-  };
-
-  useEffect(() => {
-    // Since we don't have sub-items anymore, we don't need to expand anything
-    // This effect can be removed or simplified
-  }, [pathname]);
 
   return (
     <>
