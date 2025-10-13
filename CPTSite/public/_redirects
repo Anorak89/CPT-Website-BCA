@@ -1,0 +1,4 @@
+# Static redirects for Next.js on Render
+# Let all paths resolve to their actual files first
+# Only catch-all for missing files
+/*    /*    200
