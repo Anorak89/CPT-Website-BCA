@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 import { useSidebarContext } from "./sidebar-context";
 
 const menuItemBaseStyles = cva(
-  "rounded-lg px-3.5 font-medium text-white/80 transition-all duration-200",
+  "rounded-lg px-3.5 font-medium text-white/80 transition-all duration-300 ease-out transform hover:scale-105",
   {
     variants: {
       isActive: {
-        true: "bg-blue-600/20 text-blue-400 hover:bg-blue-600/20",
+        true: "bg-blue-600/20 text-blue-400 hover:bg-blue-600/30 shadow-lg",
         false:
-          "hover:bg-white/10 hover:text-white",
+          "hover:bg-white/10 hover:text-white hover:shadow-md",
       },
     },
     defaultVariants: {
