@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { useSidebarContext } from "./sidebar-context";
 
 const menuItemBaseStyles = cva(
@@ -31,17 +31,10 @@ export function MenuItem(
   if (props.as === "link") {
     return (
       <Link
-        href={props.href}
+        to={props.href}
         // Close sidebar on clicking link if it's mobile
         onClick={() => {
-          console.log('🔍 [NAVIGATION DEBUG] Menu item clicked');
-          console.log('🔍 [NAVIGATION DEBUG] Target href:', props.href);
-          console.log('🔍 [NAVIGATION DEBUG] Current URL:', window.location.href);
-          console.log('🔍 [NAVIGATION DEBUG] Is mobile:', isMobile);
-          console.log('🔍 [NAVIGATION DEBUG] Is active:', props.isActive);
-          
           if (isMobile) {
-            console.log('🔍 [NAVIGATION DEBUG] Closing mobile sidebar');
             toggleSidebar();
           }
         }}

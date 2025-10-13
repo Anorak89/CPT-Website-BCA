@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import GoogleSigninButton from "../GoogleSigninButton";
 import SigninWithPassword from "../SigninWithPassword";
 
@@ -22,7 +22,7 @@ export default function Signin() {
       <div className="mt-6 text-center">
         <p>
           Don’t have any account?{" "}
-          <Link href="/auth/sign-up" className="text-primary">
+          <Link to="/auth/sign-up" className="text-primary">
             Sign Up
           </Link>
         </p>

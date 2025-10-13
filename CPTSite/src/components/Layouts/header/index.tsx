@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "react-router-dom";
 import { MenuIcon } from "./icons";
 import { useSidebarContext } from "@/components/Layouts/sidebar/sidebar-context";
 
@@ -22,7 +22,7 @@ export function Header() {
 
       {/* Centered Title */}
       <div className="absolute left-1/2 transform -translate-x-1/2">
-        <Link href="/" className="flex items-center">
+        <Link to="/" className="flex items-center">
           <div className="text-center">
             <h1 className="text-lg font-bold text-white">BCA CPT</h1>
             <p className="text-xs text-blue-300">Competitive Programming Team</p>

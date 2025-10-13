@@ -2,8 +2,7 @@
 
 import { Logo } from "@/components/logo";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { NAV_DATA } from "./data";
 import { ArrowLeftIcon, ChevronUp } from "./icons";
@@ -13,7 +12,8 @@ import { useSidebarContext, SidebarProvider } from "./sidebar-context";
 export { SidebarProvider };
 
 export function Sidebar() {
-  const pathname = usePathname();
+  const location = useLocation();
+  const pathname = location.pathname;
   const { setIsOpen, isOpen, isMobile, toggleSidebar } = useSidebarContext();
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
@@ -52,7 +52,6 @@ export function Sidebar() {
         style={{ willChange: 'transform, width' }}
         aria-label="Main navigation"
         aria-hidden={!isOpen}
-        inert={!isOpen}
       >
         <div className="flex h-full flex-col py-10 pl-[25px] pr-[7px]">
           {/* Hamburger stays above menu bar */}
@@ -68,7 +67,7 @@ export function Sidebar() {
               </button>
             )}
             <Link
-              href={"/"}
+              to={"/"}
               onClick={() => isMobile && toggleSidebar()}
               className="px-0 py-2.5 min-[850px]:py-0 mt-10"
             >

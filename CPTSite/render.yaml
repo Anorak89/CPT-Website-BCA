@@ -3,4 +3,4 @@ services:
     name: cpt-website-bca
     env: static
     buildCommand: npm run build
-    staticPublishPath: ./out
+    staticPublishPath: ./dist
