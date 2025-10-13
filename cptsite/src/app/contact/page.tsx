@@ -1,7 +1,15 @@
+"use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ContactPage() {
+  useEffect(() => {
+    console.log('🔍 [CONTACT PAGE DEBUG] Contact page component mounted');
+    console.log('🔍 [CONTACT PAGE DEBUG] Current URL:', window.location.href);
+    console.log('🔍 [CONTACT PAGE DEBUG] Current pathname:', window.location.pathname);
+    console.log('🔍 [CONTACT PAGE DEBUG] Contact page rendered successfully');
+  }, []);
   return (
     <>
       <Breadcrumb pageName="Contact" />

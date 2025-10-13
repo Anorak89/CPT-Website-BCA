@@ -33,7 +33,18 @@ export function MenuItem(
       <Link
         href={props.href}
         // Close sidebar on clicking link if it's mobile
-        onClick={() => isMobile && toggleSidebar()}
+        onClick={() => {
+          console.log('🔍 [NAVIGATION DEBUG] Menu item clicked');
+          console.log('🔍 [NAVIGATION DEBUG] Target href:', props.href);
+          console.log('🔍 [NAVIGATION DEBUG] Current URL:', window.location.href);
+          console.log('🔍 [NAVIGATION DEBUG] Is mobile:', isMobile);
+          console.log('🔍 [NAVIGATION DEBUG] Is active:', props.isActive);
+          
+          if (isMobile) {
+            console.log('🔍 [NAVIGATION DEBUG] Closing mobile sidebar');
+            toggleSidebar();
+          }
+        }}
         className={cn(
           menuItemBaseStyles({
             isActive: props.isActive,

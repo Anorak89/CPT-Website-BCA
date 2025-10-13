@@ -14,15 +14,39 @@ export default function LessonsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log('🔍 [LESSONS PAGE DEBUG] Component mounted');
+    console.log('🔍 [LESSONS PAGE DEBUG] Current URL:', window.location.href);
+    console.log('🔍 [LESSONS PAGE DEBUG] Current pathname:', window.location.pathname);
+    console.log('🔍 [LESSONS PAGE DEBUG] Starting data fetch...');
+
     async function loadLessons() {
       try {
-        const response = await fetch('/data/lessons.json');
+        const fetchUrl = '/data/lessons.json';
+        console.log('🔍 [LESSONS PAGE DEBUG] Fetching data from:', fetchUrl);
+        console.log('🔍 [LESSONS PAGE DEBUG] Base URL:', window.location.origin);
+        console.log('🔍 [LESSONS PAGE DEBUG] Full fetch URL:', window.location.origin + fetchUrl);
+        
+        const response = await fetch(fetchUrl);
+        
+        console.log('🔍 [LESSONS PAGE DEBUG] Fetch response status:', response.status);
+        console.log('🔍 [LESSONS PAGE DEBUG] Fetch response ok:', response.ok);
+        console.log('🔍 [LESSONS PAGE DEBUG] Fetch response headers:', Object.fromEntries(response.headers.entries()));
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
+        console.log('🔍 [LESSONS PAGE DEBUG] Loaded lessons data:', data);
+        console.log('🔍 [LESSONS PAGE DEBUG] Number of lessons:', data.length);
         setLessons(data);
       } catch (error) {
-        console.error('Failed to load lessons:', error);
+        console.error('❌ [LESSONS PAGE DEBUG] Failed to load lessons:', error);
+        console.error('❌ [LESSONS PAGE DEBUG] Error type:', error instanceof Error ? error.constructor.name : typeof error);
+        console.error('❌ [LESSONS PAGE DEBUG] Error message:', error instanceof Error ? error.message : String(error));
         setLessons([]);
       } finally {
+        console.log('🔍 [LESSONS PAGE DEBUG] Data loading completed');
         setLoading(false);
       }
     }

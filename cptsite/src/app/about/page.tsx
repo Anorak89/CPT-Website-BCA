@@ -1,6 +1,14 @@
+"use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
+import { useEffect } from "react";
 
 export default function AboutPage() {
+  useEffect(() => {
+    console.log('🔍 [ABOUT PAGE DEBUG] About page component mounted');
+    console.log('🔍 [ABOUT PAGE DEBUG] Current URL:', window.location.href);
+    console.log('🔍 [ABOUT PAGE DEBUG] Current pathname:', window.location.pathname);
+    console.log('🔍 [ABOUT PAGE DEBUG] About page rendered successfully');
+  }, []);
   return (
     <>
       <Breadcrumb pageName="About Us" />

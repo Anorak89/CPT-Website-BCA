@@ -6,6 +6,7 @@ import "jsvectormap/dist/jsvectormap.css";
 
 import { Header } from "@/components/Layouts/header";
 import { Sidebar, SidebarProvider } from "@/components/Layouts/sidebar";
+import GlobalDebugger from "@/components/GlobalDebugger";
 import type { Metadata } from "next";
 import NextTopLoader from "nextjs-toploader";
 import type { PropsWithChildren } from "react";
@@ -55,10 +56,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {
+  console.log('🔍 [LAYOUT DEBUG] RootLayout rendering');
+  console.log('🔍 [LAYOUT DEBUG] Children:', children);
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>
+          <GlobalDebugger />
           <NextTopLoader showSpinner={false} />
           <SidebarProvider defaultOpen={false}>
             <div className="min-h-screen bg-[#0b1228]">

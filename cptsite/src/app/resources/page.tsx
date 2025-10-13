@@ -1,7 +1,15 @@
+"use client";
 import Breadcrumb from "@/components/Breadcrumbs/Breadcrumb";
 import Link from "next/link";
+import { useEffect } from "react";
 
 export default function ResourcesPage() {
+  useEffect(() => {
+    console.log('🔍 [RESOURCES PAGE DEBUG] Resources page component mounted');
+    console.log('🔍 [RESOURCES PAGE DEBUG] Current URL:', window.location.href);
+    console.log('🔍 [RESOURCES PAGE DEBUG] Current pathname:', window.location.pathname);
+    console.log('🔍 [RESOURCES PAGE DEBUG] Resources page rendered successfully');
+  }, []);
   return (
     <>
       <Breadcrumb pageName="Resources" />

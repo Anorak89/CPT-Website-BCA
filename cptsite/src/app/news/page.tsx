@@ -9,15 +9,39 @@ export default function NewsPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    console.log('🔍 [NEWS PAGE DEBUG] Component mounted');
+    console.log('🔍 [NEWS PAGE DEBUG] Current URL:', window.location.href);
+    console.log('🔍 [NEWS PAGE DEBUG] Current pathname:', window.location.pathname);
+    console.log('🔍 [NEWS PAGE DEBUG] Starting data fetch...');
+
     async function loadNews() {
       try {
-        const response = await fetch('/data/news.json');
+        const fetchUrl = '/data/news.json';
+        console.log('🔍 [NEWS PAGE DEBUG] Fetching data from:', fetchUrl);
+        console.log('🔍 [NEWS PAGE DEBUG] Base URL:', window.location.origin);
+        console.log('🔍 [NEWS PAGE DEBUG] Full fetch URL:', window.location.origin + fetchUrl);
+        
+        const response = await fetch(fetchUrl);
+        
+        console.log('🔍 [NEWS PAGE DEBUG] Fetch response status:', response.status);
+        console.log('🔍 [NEWS PAGE DEBUG] Fetch response ok:', response.ok);
+        console.log('🔍 [NEWS PAGE DEBUG] Fetch response headers:', Object.fromEntries(response.headers.entries()));
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
+        console.log('🔍 [NEWS PAGE DEBUG] Loaded news data:', data);
+        console.log('🔍 [NEWS PAGE DEBUG] Number of news items:', data.length);
         setItems(data);
       } catch (error) {
-        console.error('Failed to load news:', error);
+        console.error('❌ [NEWS PAGE DEBUG] Failed to load news:', error);
+        console.error('❌ [NEWS PAGE DEBUG] Error type:', error instanceof Error ? error.constructor.name : typeof error);
+        console.error('❌ [NEWS PAGE DEBUG] Error message:', error instanceof Error ? error.message : String(error));
         setItems([]);
       } finally {
+        console.log('🔍 [NEWS PAGE DEBUG] Data loading completed');
         setLoading(false);
       }
     }
