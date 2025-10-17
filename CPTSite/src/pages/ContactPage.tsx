@@ -19,9 +19,9 @@ export default function ContactPage() {
           <div>
             <h3 className="font-semibold text-white">Meeting Info</h3>
             <div className="mt-3 space-y-1 text-white/70">
-              <p>Time: Wednesdays 3:00-4:00 PM</p>
-              <p>Location: Room TBD</p>
-              <p>Contact: cpt@bca.edu</p>
+              <p>Time: Tuesdays 4:15-5:00 PM</p>
+              <p>Location: Room 138</p>
+              <p>Contact: kunpar27@bergen.org or bozsha27@bergen.org</p>
             </div>
           </div>
         </div>
