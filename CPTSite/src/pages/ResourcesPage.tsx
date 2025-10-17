@@ -22,7 +22,7 @@ export default function ResourcesPage() {
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">ACSL</h3>
-            <a className="mt-1 text-sm text-white/70" href="www.acsl.org/get-started/study-materials">Study materials</a>
+            <a className="mt-1 text-sm text-white/70" href="https://www.acsl.org/get-started/study-materials">Study materials</a>
           </div>
         </div>
       </div>
