@@ -48,7 +48,9 @@ export default function NewsPage() {
       <Breadcrumb pageName="News" />
       <div className="rounded-[10px] bg-[#0b1228] p-6 shadow-1 border border-[#0f1a3a]">
         <h1 className="text-2xl font-bold text-white">News</h1>
-        <p className="mt-3 text-white/70">Latest updates and announcements.</p>
+        <p className="mt-3 text-white/70">Meeting every Tuesday from 4:15 to 5 unless otherwise specified.</p>
+        <br />
+        <p className="mt-1 text-white/70">We may bring treats!</p>
         <div className="mt-6 space-y-4">
           {news.map((item, index) => (
             <div key={index} className="rounded-lg border border-[#0f1a3a] p-4">
