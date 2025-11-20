@@ -11,9 +11,9 @@ export default function ContactPage() {
           <div>
             <h3 className="font-semibold text-white">Social Links</h3>
             <div className="mt-3 space-y-2">
-              <a href="#" className="block text-primary hover:underline">Discord Server</a>
-              <a href="#" className="block text-primary hover:underline">GitHub Organization</a>
-              <a href="#" className="block text-primary hover:underline">Instagram</a>
+              <a href="https://discord.gg/bca-cpt" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">Discord Server</a>
+              <a href="https://github.com/BCA-CPT" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">GitHub Organization</a>
+              <a href="https://www.instagram.com/bca.cpt" target="_blank" rel="noopener noreferrer" className="block text-primary hover:underline">Instagram</a>
             </div>
           </div>
           <div>
@@ -21,7 +21,7 @@ export default function ContactPage() {
             <div className="mt-3 space-y-1 text-white/70">
               <p>Time: Tuesdays 4:15-5:00 PM</p>
               <p>Location: Room 138</p>
-              <p>Contact: kunpar27@bergen.org or bozsha27@bergen.org</p>
+              <p>Email: <a href="mailto:kunpar27@bergen.org" className="text-primary hover:underline">kunpar27@bergen.org</a> or <a href="mailto:bozsha27@bergen.org" className="text-primary hover:underline">bozsha27@bergen.org</a></p>
             </div>
           </div>
         </div>

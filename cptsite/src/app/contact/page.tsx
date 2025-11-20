@@ -18,19 +18,19 @@ export default function ContactPage() {
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">Discord</h3>
-            <a href="#" className="mt-1 inline-block text-blue-400 hover:underline">Join our server</a>
+            <a href="https://discord.gg/bca-cpt" target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-blue-400 hover:underline">Join our server</a>
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">Email</h3>
-            <a href="mailto:bcacpt@example.com" className="mt-1 inline-block text-blue-400 hover:underline">bcacpt@example.com</a>
+            <a href="mailto:kunpar27@bergen.org" className="mt-1 inline-block text-blue-400 hover:underline">kunpar27@bergen.org</a>
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">Instagram</h3>
-            <a href="#" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</a>
+            <a href="https://www.instagram.com/bca.cpt" target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</a>
           </div>
           <div className="rounded-lg border border-[#0f1a3a] p-4">
             <h3 className="font-semibold text-white">TikTok</h3>
-            <a href="#" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</a>
+            <a href="https://www.tiktok.com/@bca.cpt" target="_blank" rel="noopener noreferrer" className="mt-1 inline-block text-blue-400 hover:underline">@bca.cpt</a>
           </div>
         </div>
       </div>
