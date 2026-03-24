@@ -1,21 +1,42 @@
 [
   {
-    "title": "Intro to CP & USACO",
-    "summary": "Getting started, platforms, problem types.",
-    "slidesUrl": "#",
-    "recordingUrl": "#"
+    "title": "Kickoff & Intro to Competitive Programming",
+    "summary": "We discussed the goals of the team, introduced everyone, and covered the main platforms we will be using (USACO, Codeforces). Learned about competitive programming formats and the standard input/output models."
   },
   {
-    "title": "Greedy & Sorting",
-    "summary": "Patterns and common pitfalls.",
-    "slidesUrl": "#",
-    "recordingUrl": "#"
+    "title": "Time Complexity & Big O Notation",
+    "summary": "A deep dive into measuring algorithm efficiency. Covered time and space complexity, how to calculate Big O, and practical examples of O(1), O(N), O(N log N), and O(N^2) algorithms to avoid TLE (Time Limit Exceeded) errors."
   },
   {
-    "title": "Graphs 1: BFS/DFS",
-    "summary": "Traversal and basic applications.",
-    "slidesUrl": "#",
-    "recordingUrl": "#"
+    "title": "Arrays, Vectors, and Basic Data Structures",
+    "summary": "We explored static vs dynamic arrays in C++ (std::vector) and Java (ArrayList). Discussed how dynamic sizing happens under the hood and best practices for memory allocation during contests."
+  },
+  {
+    "title": "Introduction to Sorting & Custom Comparators",
+    "summary": "Learned about standard sorting library functions (std::sort, Collections.sort) and how to write custom comparator functions. Used sorting to optimize brute-force search problems."
+  },
+  {
+    "title": "Binary Search & Two Pointers",
+    "summary": "Reviewed linear search, then proved binary search efficiency. Wrote binary search algorithm from scratch to avoid off-by-one errors. Also covered the two pointers approach for sliding window optimization."
+  },
+  {
+    "title": "Graph Theory Basics",
+    "summary": "Modeled real-world connections using graphs. Covered vertices, edges, directed vs undirected graphs, and how to represent them efficiently using Adjacency Lists in code."
+  },
+  {
+    "title": "BFS & DFS Traversal Techniques",
+    "summary": "Implemented Breadth-First Search (using a Queue) and Depth-First Search (using Recursion/Stack). We practiced traversing grids, finding connected components, and tracking visited states."
+  },
+  {
+    "title": "Greedy Algorithms and Optimization",
+    "summary": "Analyzed problems where making the locally optimal choice leads to the globally optimal solution. Learned patterns and common pitfalls where greedy approaches fail and when to prove a greedy choice."
+  },
+  {
+    "title": "Intro to Dynamic Programming & Prefix Sums",
+    "summary": "Transitioned from overlapping subproblems to optimal substructure. Practiced calculating 1D and 2D prefix sum arrays for fast range queries, and basic memoization techniques."
+  },
+  {
+    "title": "Mock USACO Bronze & Strategy Session",
+    "summary": "Simulated a real 4-hour contest environment using past USACO Bronze problems. Reviewed debugging techniques, reading problem statements carefully, and dealing with edge cases."
   }
 ]
-
